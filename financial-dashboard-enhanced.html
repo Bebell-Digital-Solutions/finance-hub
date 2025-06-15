@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Dashboard - Personal & Business Finance Management</title>
+    <title>Financial Dashboard</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -42,17 +45,54 @@
             darkMode: 'class'
         }
     </script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    
-    <!-- Chart.js for Financial Charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- EmailJS for Email Notifications -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    
+
+
     <style>
+
+    .custom-image-widget {
+  position: fixed !important;
+  top: 100px !important;  /* Verify this value isn't too large */
+  margin: 0 !important;
+  padding: 0 !important;
+    right: 20px; /* Add spacing from the edge */
+        z-index: 999;
+}
+  
+    .custom-image {
+        width: 50px;
+        height: auto;
+       transition: transform 0.2s;
+    }
+    
+    
+      .custom-image-widget:hover .custom-image {
+        transform: scale(1.05); /* Slight zoom effect */
+    }  
+ 
+ 
+     .custom-image-widget:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+ 
+ 
+         button[onclick*="openNotionTemplateModal"] {
+        background-color: #DF1783 !important;
+        color: white !important;
+    }
+
+
+
+button[onclick*="openNotionTemplateModal"]:hover {
+    background-color: #be185d !important; /* primary-700 */
+}
+
+
+
+
+
+
+        
         .sidebar-transition {
             transition: transform 0.3s ease-in-out;
         }
@@ -164,9 +204,40 @@
             overflow-y: auto;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
         }
+        
+        
     </style>
+    
+      
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Chart.js for Financial Charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- EmailJS for Email Notifications -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>  
+    
+    
 </head>
 <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
+
+ <div class="custom-image-widget" style="position: relative; display: inline-block;"> <!-- ADD THESE STYLES -->
+    <a href="https://elnegocio-digital.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp">
+        <img class="custom-image" 
+             src="https://bucket.mlcdn.com/a/3336/3336910/images/2a80b4b95b286e4b7ad474d57c02f3e5ce1fa616.png" 
+             alt="English Translation"
+             style="display: block;"> <!-- Ensure image is block-level -->
+    </a>
+
+</div>
+
+
+
+
+
+    
     <!-- Toast Notification -->
     <div id="toast" class="toast hide bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
         <span id="toast-message">Success!</span>
@@ -345,20 +416,136 @@
                         </div>
                     </div>
                     
-                    <!-- Notion Template Button -->
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-                        <div class="mb-4">
-                            <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">📋 Resources</h3>
-                            <button onclick="openNotionTemplateModal(); toggleMobileMenu()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
-                                <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
-                                Notion Template
-                            </button>
-                        </div>
+                            <!-- Notion Template Button -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+                    <div class="mb-4">
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">📋 Resources</h3>
+                        <button 
+            onclick="openNotionTemplateModal(); toggleMobileMenu()" 
+            class="w-full font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center hover:!bg-[#be185d]"
+            style="background-color: #DF1783 !important; color: white !important;"
+    onmouseover="this.style.backgroundColor='#be185d'"
+    onmouseout="this.style.backgroundColor='#DF1783'"
+        >
+            <i data-lucide="file-text" class="w-4 h-4 mr-2" style="color: white !important;"></i>
+            Notion Template
+        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    
+    
+    
+    
+
+    <!-- Mobile Sidebar Overlay -->
+    <div id="mobile-overlay" class="lg:hidden fixed inset-0 z-40 hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
+        <div id="mobile-sidebar" class="sidebar-transition relative w-80 bg-white dark:bg-gray-800 h-full shadow-lg transform -translate-x-full">
+            <!-- Copy of sidebar content for mobile -->
+            <div class="p-6">
+                <!-- Logo and Header -->
+                <div class="mb-8">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="wallet" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                        Financial Dashboard
+                    </h1>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Your Complete Finance Management Hub
+                    </p>
+                </div>
+
+
+
+
+                <!-- Navigation Menu -->
+                <nav class="space-y-2 mb-8">
+                    <a href="#" onclick="showSection('overview'); toggleMobileMenu()" class="mobile-nav-item active flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="layout-dashboard" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Overview</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                    <a href="#" onclick="showSection('accounts'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="building-2" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Accounts</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                    <a href="#" onclick="showSection('transactions'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="credit-card" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Transactions</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                    <a href="#" onclick="showSection('budgets'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="pie-chart" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Budgets</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                    <a href="#" onclick="showSection('reports'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="bar-chart" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Reports</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                    <a href="#" onclick="showSection('calendar'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="calendar" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Calendar</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                    <a href="#" onclick="showSection('settings'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
+                        <i data-lucide="settings" class="w-4 h-4 mr-3"></i>
+                        <span class="font-medium">Settings</span>
+                        <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                    </a>
+                </nav>
+
+                <!-- Quick Actions -->
+                <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
+                    <div class="mb-4">
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">💰 Quick Actions</h3>
+                        <div class="space-y-2">
+                            <button onclick="openAddTransactionModal(); toggleMobileMenu()" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
+                                <i data-lucide="plus" class="w-4 h-4 mr-2"></i>
+                                Add Transaction
+                            </button>
+                            <button onclick="openAddGoalModal(); toggleMobileMenu()" class="w-full border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-700 dark:text-gray-300 font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
+                                <i data-lucide="target" class="w-4 h-4 mr-2"></i>
+                                Add Goal
+                            </button>
+                        </div>
+                    </div>
+                    
+<!-- Notion Template Button -->
+<div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+    <div class="mb-4">
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">📋 Resources</h3>
+        <button 
+            onclick="openNotionTemplateModal(); toggleMobileMenu()" 
+            class="w-full font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center hover:!bg-[#be185d]"
+            style="background-color: #DF1783 !important; color: white !important;"
+    onmouseover="this.style.backgroundColor='#be185d'"
+    onmouseout="this.style.backgroundColor='#DF1783'"
+        >
+            <i data-lucide="file-text" class="w-4 h-4 mr-2" style="color: white !important;"></i>
+            Notion Template
+        </button>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+
+
+
+
+        
 
     <!-- Main Content -->
     <div class="lg:ml-80 min-h-screen">
@@ -1193,8 +1380,88 @@
         </div>
     </div>
 
+
+
+
+  <!-- Banner with links -->
+<div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" x-data="{ bannerOpen: true, videoOpen: false }" x-show="bannerOpen">
+    <!-- Video Popup (hidden by default) -->
+    <div x-show="videoOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" @click.away="videoOpen = false">
+        <div class="relative w-full max-w-4xl bg-white rounded-lg overflow-hidden">
+            <!-- Close Button -->
+            <button class="absolute top-2 right-2 z-50 text-white bg-black/50 hover:bg-black/75 rounded-full p-1" @click="videoOpen = false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span class="sr-only">Close video</span>
+            </button>
+            
+            <div class="aspect-w-16 aspect-h-9">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    class="w-full h-[300px] md:h-[500px]"
+                ></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Banner Content -->
+    <div class="bg-[#DF1783] text-sm p-3 md:rounded-lg shadow-lg flex justify-between">
+        <div class="text-white inline-flex items-center">
+            <!-- Your Logo Icon -->
+            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/0ebdbcd8dbd9c182ba5e477001c9e9d354d6b9ee.png" class="w-5 h-5 mr-2" alt="Bebell Digital Solutions Logo">
+            
+            <button class="font-medium hover:underline text-white" @click="videoOpen = true">
+                Watch Tutorial
+            </button>
+            <span class="italic px-1.5">or</span>
+            <a class="font-medium hover:underline text-white flex items-center" href="https://github.com/cruip/cruip-tutorials/blob/main/vertical-timelines/index.html" target="_blank" rel="noreferrer">
+                <span>Download</span>
+                <svg class="fill-white ml-1" xmlns="http://www.w3.org/2000/svg" width="9" height="9">
+                    <path d="m1.649 8.514-.91-.915 5.514-5.523H2.027l.01-1.258h6.388v6.394H7.158l.01-4.226z" />
+                </svg>
+            </a>
+        </div>
+        <button class="text-white hover:text-slate-200 pl-2 ml-3 border-l border-white/30" @click="bannerOpen = false">
+            <span class="sr-only">Close</span>
+            <svg class="w-4 h-4 shrink-0 fill-current" viewBox="0 0 16 16">
+                <path d="M12.72 3.293a1 1 0 00-1.415 0L8.012 6.586 4.72 3.293a1 1 0 00-1.414 1.414L6.598 8l-3.293 3.293a1 1 0 101.414 1.414l3.293-3.293 3.293 3.293a1 1 0 001.414-1.414L9.426 8l3.293-3.293a1 1 0 000-1.414z" />
+            </svg>
+        </button>
+    </div>
+</div>
+<!-- End Banner with links -->
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
     <!-- JavaScript -->
+
+ 
+        <!-- Initialize Lucide Icons -->
     <script>
+        lucide.createIcons();
+        
+        function openNotionTemplateModal() {
+            // Your modal opening logic here
+            console.log("Notion template modal should open");
+        }
+        
+        function toggleMobileMenu() {
+            
+            // Your mobile menu toggle logic here
+            console.log("Mobile menu should toggle");
+        }
+
+    
+    
         // Enhanced Data Storage with Calendar Integration
         class FinancialData {
             constructor() {
