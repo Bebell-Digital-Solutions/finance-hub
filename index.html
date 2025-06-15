@@ -196,6 +196,8 @@ right: 0px;
             overflow-y: auto;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
         }
+        
+        
     </style>
 </head>
 <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
@@ -1122,134 +1124,8 @@ right: 0px;
         </div>
     </div>
 
-    <!-- Add Goal Modal -->
-    <div id="add-goal-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Add Financial Goal</h3>
-                    <button onclick="closeModal('add-goal-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-                        <i data-lucide="x" class="w-5 h-5"></i>
-                    </button>
-                </div>
-                <form id="goal-form" class="space-y-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Goal Name</label>
-                        <input type="text" id="goal-name" placeholder="e.g., Emergency Fund" required
-                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Target Amount</label>
-                        <input type="number" id="goal-target" step="0.01" min="0" placeholder="0.00" required
-                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Current Amount</label>
-                        <input type="number" id="goal-current" step="0.01" min="0" placeholder="0.00"
-                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Target Date</label>
-                        <input type="date" id="goal-deadline" 
-                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
-                    </div>
-                    <div class="flex justify-end space-x-3 pt-4">
-                        <button type="button" onclick="closeModal('add-goal-modal')" 
-                                class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
-                            Cancel
-                        </button>
-                        <button type="submit" 
-                                class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg">
-                            Add Goal
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Notion Template Modal -->
-    <div id="notion-template-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full p-6">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">📋 Notion Financial Template</h3>
-                    <button onclick="closeModal('notion-template-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
-                        <i data-lucide="x" class="w-5 h-5"></i>
-                    </button>
-                </div>
-                
-                <div class="notion-template bg-gray-50 dark:bg-gray-700 rounded-lg p-6 mb-6">
-                    <div class="text-center mb-6">
-                        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="file-text" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Personal Finance Template</h2>
-                        <p class="text-gray-600 dark:text-gray-300">Complete Notion template for managing your personal finances</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🎯 What's Included:</h3>
-                            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                                <li>Complete database setup for accounts, transactions, and categories</li>
-                                <li>Budget tracking with visual progress indicators</li>
-                                <li>Monthly and yearly financial reports</li>
-                                <li>Goal tracking and milestone management</li>
-                                <li>Expense categorization system</li>
-                                <li>Income and expense analysis templates</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🚀 Quick Setup Guide:</h3>
-                            <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
-                                <li>Click the "Copy Template" button below</li>
-                                <li>Go to your Notion workspace</li>
-                                <li>Delete existing sample data from each database</li>
-                                <li>Add your accounts with initial balances</li>
-                                <li>Set up your expense categories and monthly budgets</li>
-                                <li>Start tracking your transactions</li>
-                            </ol>
-                        </div>
-
-                        <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
-                            <h4 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">💡 Pro Tips:</h4>
-                            <ul class="text-sm text-blue-800 dark:text-blue-300 space-y-1">
-                                <li>• Select the correct category for each expense to track budget accurately</li>
-                                <li>• Update your account balances regularly for accurate reporting</li>
-                                <li>• Use the transfer function to move money between accounts</li>
-                                <li>• Set realistic monthly budgets based on your spending history</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex justify-between items-center">
-                    <div class="text-sm text-gray-500 dark:text-gray-400">
-                        <p>Created by Bebell Digital Solutions</p>
-                        <p>Template includes databases, formulas, and automation</p>
-                    </div>
-                    <div class="flex space-x-3">
-                        <button onclick="copyTemplateText()" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center">
-                            <i data-lucide="copy" class="w-4 h-4 mr-2"></i>
-                            Copy Text
-                        </button>
-                        <a href="https://www.notion.so/templates/personal-finance-tracker" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center">
-                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
-                            Copy Template
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-
-<!-- Banner with links -->
-<div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" :class="bannerOpen ? '' : 'hidden'" x-data="{ bannerOpen: true, videoOpen: false }">
+  <!-- Banner with links -->
+<div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" x-data="{ bannerOpen: true, videoOpen: false }" x-show="bannerOpen">
     <!-- Video Popup (hidden by default) -->
     <div x-show="videoOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" @click.away="videoOpen = false">
         <div class="relative w-full max-w-4xl bg-white rounded-lg overflow-hidden">
@@ -1274,10 +1150,6 @@ right: 0px;
             </div>
         </div>
     </div>
-
-
-    
-    
     
     <!-- Banner Content -->
     <div class="bg-[#DF1783] text-sm p-3 md:rounded-lg shadow-lg flex justify-between">
@@ -1306,8 +1178,7 @@ right: 0px;
 </div>
 <!-- End Banner with links -->
 
-
-
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 
     <!-- JavaScript -->
