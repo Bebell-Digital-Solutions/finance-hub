@@ -51,8 +51,40 @@
     
     <!-- EmailJS for Email Notifications -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+
     
     <style>
+
+    .custom-image-widget {
+  position: fixed !important;
+  top: 100px !important;  /* Verify this value isn't too large */
+  margin: 0 !important;
+  padding: 0 !important;
+right: 0px;
+        z-index: 999;
+}
+  
+    .custom-image {
+        width: 50px;
+        height: auto;
+       transition: transform 0.2s;
+    }
+    
+    
+      .custom-image-widget:hover .custom-image {
+        transform: scale(1.05); /* Slight zoom effect */
+    }  
+ 
+ 
+     .custom-image-widget:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+ 
+
+        
         .sidebar-transition {
             transition: transform 0.3s ease-in-out;
         }
@@ -190,8 +222,10 @@
     <div id="sidebar" class="hidden lg:block fixed left-0 top-0 h-full w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-lg overflow-y-auto z-10 custom-scrollbar">
         <div class="p-6">
             <!-- Logo and Header -->
+]
+            
             <div class="mb-8">
-                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mb-4">
                     <i data-lucide="wallet" class="w-6 h-6 text-white"></i>
                 </div>
                 <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
@@ -201,6 +235,8 @@
                     Your Complete Finance Management Hub
                 </p>
             </div>
+
+            
 
             <!-- Navigation Menu -->
             <nav class="space-y-2 mb-8">
