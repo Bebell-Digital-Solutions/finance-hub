@@ -51,18 +51,15 @@
     
     <!-- EmailJS for Email Notifications -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-
-
     
     <style>
-
-    .custom-image-widget {
+    
+        .custom-image-widget {
   position: fixed !important;
   top: 100px !important;  /* Verify this value isn't too large */
   margin: 0 !important;
   padding: 0 !important;
-right: 0px;
+    right: 0px; /* Add spacing from the edge */
         z-index: 999;
 }
   
@@ -84,7 +81,7 @@ right: 0px;
     }
  
 
-        
+    
         .sidebar-transition {
             transition: transform 0.3s ease-in-out;
         }
@@ -196,11 +193,13 @@ right: 0px;
             overflow-y: auto;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
         }
-        
-        
     </style>
 </head>
+
+
+
 <body class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+
 
 
  <div class="custom-image-widget" style="position: relative; display: inline-block;"> <!-- ADD THESE STYLES -->
@@ -217,7 +216,12 @@ right: 0px;
 
 
 
-    
+
+
+
+
+
+
     <!-- Toast Notification -->
     <div id="toast" class="toast hide bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg">
         <span id="toast-message">Success!</span>
@@ -240,20 +244,27 @@ right: 0px;
     <!-- Desktop Sidebar -->
     <div id="sidebar" class="hidden lg:block fixed left-0 top-0 h-full w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 shadow-lg overflow-y-auto z-10 custom-scrollbar">
         <div class="p-6">
+        
+        
+        
             <!-- Logo and Header -->
-            
             <div class="mb-8">
-                <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center mb-4">
+                <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-purple-600 rounded-lg flex items-center justify-center mb-4">
                     <i data-lucide="wallet" class="w-6 h-6 text-white"></i>
                 </div>
+                
+                
+                
                 <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                     Financial Dashboard
                 </h1>
+                
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                    Your Complete Finance Management Hub
+                    Your Complete Finance Management Hub.
                 </p>
             </div>
-
+            
+            
             
 
             <!-- Navigation Menu -->
@@ -315,7 +326,7 @@ right: 0px;
                 <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
                     <div class="mb-4">
                         <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">📋 Resources</h3>
-                        <button onclick="openNotionTemplateModal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
+                        <button onclick="openNotionTemplateModal()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
                             <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
                             Notion Template
                         </button>
@@ -324,23 +335,33 @@ right: 0px;
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
 
     <!-- Mobile Sidebar Overlay -->
     <div id="mobile-overlay" class="lg:hidden fixed inset-0 z-40 hidden">
         <div class="absolute inset-0 bg-black bg-opacity-50" onclick="toggleMobileMenu()"></div>
         <div id="mobile-sidebar" class="sidebar-transition relative w-80 bg-white dark:bg-gray-800 h-full shadow-lg transform -translate-x-full">
             <!-- Copy of sidebar content for mobile -->
+            
+            
             <div class="p-6">
                 <!-- Logo and Header -->
                 <div class="mb-8">
-                    <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-600 to-primary-600 rounded-lg flex items-center justify-center mb-4">
                         <i data-lucide="wallet" class="w-6 h-6 text-white"></i>
                     </div>
                     <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                         Financial Dashboard
                     </h1>
                     <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
-                        Your Complete Finance Management Hub
+                        Your Complete Finance Management Hub.
                     </p>
                 </div>
 
@@ -403,7 +424,7 @@ right: 0px;
                     <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
                         <div class="mb-4">
                             <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">📋 Resources</h3>
-                            <button onclick="openNotionTemplateModal(); toggleMobileMenu()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
+                            <button onclick="openNotionTemplateModal(); toggleMobileMenu()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
                                 <i data-lucide="file-text" class="w-4 h-4 mr-2"></i>
                                 Notion Template
                             </button>
@@ -413,23 +434,47 @@ right: 0px;
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     <!-- Main Content -->
     <div class="lg:ml-80 min-h-screen">
         <div class="p-4 lg:p-8 pt-20 lg:pt-8">
-            
-            <!-- Overview Section -->
-            <div id="overview-section" class="content-section fade-in">
-                <div class="max-w-7xl mx-auto">
+        
+        
+        
+        <!-- Overview Section -->
+            <div id="overview-section" class="content-section fade-in">                
+            <div class="max-w-6xl mx-auto">
                     <!-- Hero Section -->
-                    <div class="mb-8">
-                        <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            Financial Overview
+                    <div class="text-center mb-12">
+                    <br>
+                        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                         Financial
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
+                                Overview
+                            </span>
                         </h1>
-                        <p class="text-lg text-gray-600 dark:text-gray-400 mb-6">
-                            Track your financial health, manage budgets, and achieve your financial goals.
-                        </p>
+                        
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400 mb-8">
+Track your financial health, manage budgets, and achieve your financial goals.                        
+</p>
+
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Quick Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -481,6 +526,13 @@ right: 0px;
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Charts Section -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -498,6 +550,15 @@ right: 0px;
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Recent Transactions -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-8">
@@ -512,6 +573,12 @@ right: 0px;
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Financial Goals -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6">
@@ -528,6 +595,21 @@ right: 0px;
                     </div>
                 </div>
             </div>
+            
+            
+           <div>
+  <p style="font-size: 12px; text-align: center; margin: 10px 0; color: #666;">
+    <br>Developed with 💖 by Bebell Digital Solutions.<br>
+    Copyright © 2024 • All rights reserved
+  </p>
+</div>
+                 
+
+           </div>  
+            
+            
+            
+            
 
             <!-- Accounts Section -->
             <div id="accounts-section" class="content-section hidden fade-in">
@@ -555,6 +637,12 @@ right: 0px;
                     </div>
                 </div>
             </div>
+            
+            
+            
+            
+            
+            
 
             <!-- Transactions Section -->
             <div id="transactions-section" class="content-section hidden fade-in">
@@ -569,6 +657,10 @@ right: 0px;
                             Add Transaction
                         </button>
                     </div>
+                    
+                    
+                    
+                    
 
                     <!-- Filters -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -605,6 +697,15 @@ right: 0px;
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Transactions Table -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
@@ -639,6 +740,13 @@ right: 0px;
                     </div>
                 </div>
             </div>
+            
+            
+            
+            
+            
+            
+            
 
             <!-- Budgets Section -->
             <div id="budgets-section" class="content-section hidden fade-in">
@@ -665,7 +773,15 @@ right: 0px;
                         </div>
                     </div>
                 </div>
+                
             </div>
+            
+            
+            
+            
+            
+            
+            
 
             <!-- Reports Section -->
             <div id="reports-section" class="content-section hidden fade-in">
@@ -674,6 +790,15 @@ right: 0px;
                         <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-2">Reports</h1>
                         <p class="text-lg text-gray-600 dark:text-gray-400">Analyze your financial performance and trends</p>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Report Filters -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -703,6 +828,13 @@ right: 0px;
                             </div>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Report Charts -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -722,6 +854,13 @@ right: 0px;
                     </div>
                 </div>
             </div>
+            
+            
+            
+            
+            
+            
+            
 
             <!-- Calendar Section -->
             <div id="calendar-section" class="content-section hidden fade-in">
@@ -742,6 +881,14 @@ right: 0px;
                             </button>
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Calendar Navigation -->
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 p-6 mb-6">
@@ -755,6 +902,15 @@ right: 0px;
                             </button>
                         </div>
                         
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <!-- Calendar Grid -->
                         <div class="grid grid-cols-7 gap-1">
                             <div class="p-2 text-center text-sm font-medium text-gray-500 dark:text-gray-400">Sun</div>
@@ -766,9 +922,18 @@ right: 0px;
                             <div class="p-2 text-center text-sm font-medium text-gray-500 dark:text-gray-400">Sat</div>
                         </div>
                         <div id="calendar-grid" class="grid grid-cols-7 gap-1 mt-2">
+                        
+                        
+                        
                             <!-- Calendar days will be populated here -->
                         </div>
                     </div>
+                    
+                    
+                    
+                    
+                    
+                    
 
                     <!-- Upcoming Events -->
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -794,6 +959,14 @@ right: 0px;
                     </div>
                 </div>
             </div>
+            
+            
+            
+            
+            
+            
+            
+            
 
             <!-- Settings Section -->
             <div id="settings-section" class="content-section hidden fade-in">
@@ -821,6 +994,11 @@ right: 0px;
                                 </button>
                             </nav>
                         </div>
+
+
+
+
+
 
                         <!-- General Settings -->
                         <div id="general-settings" class="settings-content p-6">
@@ -961,6 +1139,11 @@ right: 0px;
             </div>
         </div>
     </div>
+    
+    
+    
+    
+    
 
     <!-- Modal Backdrop -->
     <div id="modal-backdrop" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden" onclick="closeAllModals()"></div>
@@ -1124,7 +1307,130 @@ right: 0px;
         </div>
     </div>
 
-  <!-- Banner with links -->
+    <!-- Add Goal Modal -->
+    <div id="add-goal-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Add Financial Goal</h3>
+                    <button onclick="closeModal('add-goal-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <form id="goal-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Goal Name</label>
+                        <input type="text" id="goal-name" placeholder="e.g., Emergency Fund" required
+                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Target Amount</label>
+                        <input type="number" id="goal-target" step="0.01" min="0" placeholder="0.00" required
+                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Current Amount</label>
+                        <input type="number" id="goal-current" step="0.01" min="0" placeholder="0.00"
+                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Target Date</label>
+                        <input type="date" id="goal-deadline" 
+                               class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    <div class="flex justify-end space-x-3 pt-4">
+                        <button type="button" onclick="closeModal('add-goal-modal')" 
+                                class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">
+                            Cancel
+                        </button>
+                        <button type="submit" 
+                                class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded-lg">
+                            Add Goal
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notion Template Modal -->
+    <div id="notion-template-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-4xl w-full p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">📋 Notion Financial Template</h3>
+                    <button onclick="closeModal('notion-template-modal')" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                
+                <div class="notion-template bg-gray-50 dark:bg-gray-700 rounded-lg p-6 mb-6">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="file-text" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">Personal Finance Template</h2>
+                        <p class="text-gray-600 dark:text-gray-300">Complete Notion template for managing your personal finances</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🎯 What's Included:</h3>
+                            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Complete database setup for accounts, transactions, and categories</li>
+                                <li>Budget tracking with visual progress indicators</li>
+                                <li>Monthly and yearly financial reports</li>
+                                <li>Goal tracking and milestone management</li>
+                                <li>Expense categorization system</li>
+                                <li>Income and expense analysis templates</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-3">🚀 Quick Setup Guide:</h3>
+                            <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+                                <li>Click the "Copy Template" button below</li>
+                                <li>Go to your Notion workspace</li>
+                                <li>Delete existing sample data from each database</li>
+                                <li>Add your accounts with initial balances</li>
+                                <li>Set up your expense categories and monthly budgets</li>
+                                <li>Start tracking your transactions</li>
+                            </ol>
+                        </div>
+
+                        <div class="bg-blue-50 dark:bg-blue-900 rounded-lg p-4">
+                            <h4 class="font-semibold text-blue-900 dark:text-blue-200 mb-2">💡 Pro Tips:</h4>
+                            <ul class="text-sm text-blue-800 dark:text-blue-300 space-y-1">
+                                <li>• Select the correct category for each expense to track budget accurately</li>
+                                <li>• Update your account balances regularly for accurate reporting</li>
+                                <li>• Use the transfer function to move money between accounts</li>
+                                <li>• Set realistic monthly budgets based on your spending history</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">
+                        <p>Created by Bebell Digital Solutions</p>
+                        <p>Template includes databases, formulas, and automation</p>
+                    </div>
+                    <div class="flex space-x-3">
+                        <button onclick="copyTemplateText()" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 flex items-center">
+                            <i data-lucide="copy" class="w-4 h-4 mr-2"></i>
+                            Copy Text
+                        </button>
+                        <a href="https://www.notion.so/templates/personal-finance-tracker" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            Copy Template
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add this right before the closing </body> tag, just before your existing script section -->
 <div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" x-data="{ bannerOpen: true, videoOpen: false }" x-show="bannerOpen">
     <!-- Video Popup (hidden by default) -->
     <div x-show="videoOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4" @click.away="videoOpen = false">
@@ -1176,10 +1482,22 @@ right: 0px;
         </button>
     </div>
 </div>
-<!-- End Banner with links -->
-
-<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <!-- Alpine.js -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    
+    
 
     <!-- JavaScript -->
     <script>
@@ -1471,6 +1789,9 @@ right: 0px;
                     minimumFractionDigits: currency === 'JPY' ? 0 : 2
                 }).format(amount);
             } catch (error) {
+                
+                
+                
                 // Fallback for unsupported currencies
                 return `${symbol}${amount.toLocaleString('en-US', {
                     minimumFractionDigits: currency === 'JPY' ? 0 : 2,
@@ -1479,6 +1800,11 @@ right: 0px;
             }
         }
 
+        
+        
+        
+        
+        
         // 2. CALENDAR SYNC IMPLEMENTATION
         function exportCalendar(type) {
             if (type === 'google') {
@@ -1495,6 +1821,9 @@ right: 0px;
                 return;
             }
 
+            
+            
+            
             // Create Google Calendar URLs for each event
             events.forEach(event => {
                 const startDate = event.date.replace(/-/g, '');
@@ -1552,7 +1881,11 @@ right: 0px;
         function getAllCalendarEvents() {
             const events = [];
             
-            // Add transaction events
+           
+           
+           
+           
+           // Add transaction events
             financialData.transactions.forEach(transaction => {
                 const account = financialData.accounts.find(a => a.id === transaction.account);
                 events.push({
@@ -1590,6 +1923,10 @@ right: 0px;
 
             return events;
         }
+        
+        
+        
+        
 
         // 3. TRANSACTIONS IN CALENDAR IMPLEMENTATION
         function loadCalendar() {
@@ -1609,6 +1946,9 @@ right: 0px;
             
             let calendarHTML = '';
             
+            
+            
+            
             // Empty cells for days before the first day of the month
             for (let i = 0; i < firstDay; i++) {
                 calendarHTML += '<div class="p-2 h-20"></div>';
@@ -1620,6 +1960,10 @@ right: 0px;
                 const isToday = new Date().getDate() === day && 
                                new Date().getMonth() === currentMonth && 
                                new Date().getFullYear() === currentYear;
+                
+                
+                
+                
                 
                 // Get events for this date
                 const dayTransactions = financialData.getTransactionsForDate(currentDate);
@@ -1734,7 +2078,7 @@ Created by Bebell Digital Solutions
             // Initialize EmailJS with your public key
             // You'll need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
             if (typeof emailjs !== 'undefined') {
-                emailjs.init('YOUR_PUBLIC_KEY'); // Replace with your EmailJS public key
+                emailjs.init('pzi6GkEVpxFMX_PUe'); // Replace with your EmailJS public key
                 emailJS = emailjs;
             }
         }
@@ -1791,7 +2135,7 @@ Created by Bebell Digital Solutions
                 message: 'Your email notifications have been successfully set up! You will receive reminders based on your preferences.'
             };
 
-            emailJS.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            emailJS.send('BebellDigitalSolutions', 'bebell_notifications', templateParams)
                 .then(() => {
                     showToast('Test email sent successfully!', 'success');
                 })
@@ -1811,7 +2155,7 @@ Created by Bebell Digital Solutions
                 message: `Don't forget! Your bill "${bill.name}" is due on ${formatDate(bill.dueDate)}. Amount: ${formatCurrency(bill.amount)}`
             };
 
-            emailJS.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+            emailJS.send('BebellDigitalSolutions', 'bebell_notifications', templateParams)
                 .catch(error => console.error('Failed to send bill reminder:', error));
         }
 
@@ -1974,6 +2318,10 @@ After completing setup, return to settings and enter your email address to activ
                 item.classList.remove('bg-primary-50', 'dark:bg-primary-900', 'text-primary-700', 'dark:text-primary-300');
                 item.classList.add('text-gray-700', 'dark:text-gray-300');
             });
+            
+            
+            
+            
 
             // Add active state to current nav item
             const activeNavItems = document.querySelectorAll(`[onclick*="showSection('${sectionName}')"]`);
@@ -1984,6 +2332,9 @@ After completing setup, return to settings and enter your email address to activ
             });
 
             currentSection = sectionName;
+
+
+
 
             // Load section-specific data
             loadSectionData(sectionName);
@@ -2020,6 +2371,10 @@ After completing setup, return to settings and enter your email address to activ
             loadReports();
             loadCalendar();
         }
+        
+        
+        
+        
 
         // Mobile Menu Functions
         function toggleMobileMenu() {
@@ -2039,6 +2394,10 @@ After completing setup, return to settings and enter your email address to activ
             
             lucide.createIcons();
         }
+        
+        
+        
+        
 
         // Modal Functions
         function openAddTransactionModal() {
@@ -2061,6 +2420,10 @@ After completing setup, return to settings and enter your email address to activ
             document.getElementById('modal-backdrop').classList.remove('hidden');
             document.getElementById(modalId).classList.remove('hidden');
             
+            
+            
+            
+            
             // Focus first input in modal
             setTimeout(() => {
                 const firstInput = document.querySelector(`#${modalId} input, #${modalId} select`);
@@ -2080,6 +2443,10 @@ After completing setup, return to settings and enter your email address to activ
                 modal.classList.add('hidden');
             });
         }
+        
+        
+        
+        
 
         // Toast notification
         function showToast(message, type = 'success') {
@@ -2087,6 +2454,8 @@ After completing setup, return to settings and enter your email address to activ
             const toastMessage = document.getElementById('toast-message');
             
             toastMessage.textContent = message;
+            
+            
             
             // Set toast color based on type
             toast.className = 'toast show px-6 py-3 rounded-lg shadow-lg';
@@ -2098,12 +2467,16 @@ After completing setup, return to settings and enter your email address to activ
                 toast.classList.add('bg-blue-500', 'text-white');
             }
             
+            
+            
             // Hide after 3 seconds
             setTimeout(() => {
                 toast.classList.remove('show');
                 toast.classList.add('hide');
             }, 3000);
         }
+
+
 
         // Data Loading Functions (keeping existing ones)
         function loadOverviewData() {
@@ -2975,6 +3348,11 @@ After completing setup, return to settings and enter your email address to activ
             initCategoryDistributionChart();
             showToast('Report generated successfully!');
         }
+        
+        
+        
+        
+        
 
         // Data Import/Export
         function exportData(format) {
@@ -3016,6 +3394,9 @@ After completing setup, return to settings and enter your email address to activ
                     const lines = csv.split('\n');
                     const headers = lines[0].split(',');
                     
+                    
+                    
+                    
                     // Basic CSV parsing (simplified)
                     for (let i = 1; i < lines.length; i++) {
                         const data = lines[i].split(',');
@@ -3052,6 +3433,9 @@ After completing setup, return to settings and enter your email address to activ
             }
         }
 
+
+
+
         // Form Handlers
         function setupFormHandlers() {
             // Transaction form
@@ -3076,6 +3460,9 @@ After completing setup, return to settings and enter your email address to activ
                 const editId = this.dataset.editId;
                 
                 if (editId) {
+                
+                
+                
                     // Update existing transaction
                     formData.amount = formData.type === 'expense' ? -Math.abs(formData.amount) : Math.abs(formData.amount);
                     financialData.updateTransaction(parseInt(editId), formData);
@@ -3094,6 +3481,8 @@ After completing setup, return to settings and enter your email address to activ
                 this.reset();
                 document.getElementById('transaction-date').value = new Date().toISOString().split('T')[0];
             });
+            
+            
 
             // Account form
             document.getElementById('account-form').addEventListener('submit', function(e) {
