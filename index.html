@@ -51,8 +51,52 @@
     
     <!-- EmailJS for Email Notifications -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
+
+	<!-- ICONS CODE -->
+<script> function removeFromLinks(rel) {
+for (link of document.head.getElementsByTagName("link")) {
+if (link.rel == rel) {
+document.head.removeChild(link);
+}
+};
+}
+function createNewFavicon(rel, img) {
+var newFavicon = document.createElement("link");
+newFavicon.type = "image/png";
+newFavicon.rel = rel;
+newFavicon.href = img;
+var firstHeadElement = document.head.firstChild;
+document.head.insertBefore(newFavicon, firstHeadElement);
+}
+removeFromLinks("icon");
+removeFromLinks("shortcut icon");
+removeFromLinks("apple-touch-icon");
+createNewFavicon("icon", "https://bucket.mlcdn.com/a/3336/3336910/images/16ecca0c74decc9e7fffd7c6d8b13dcbaf821311.png");
+createNewFavicon("shortcut icon", "https://bucket.mlcdn.com/a/3336/3336910/images/16ecca0c74decc9e7fffd7c6d8b13dcbaf821311.png");
+createNewFavicon("apple-touch-icon", "https://bucket.mlcdn.com/a/3336/3336910/images/16ecca0c74decc9e7fffd7c6d8b13dcbaf821311.png"); </script>
+<!-- End ICONS Code -->
+
+    
+    
     
     <style>
+
+   :root {
+	--title: "Financial Hub";
+	--autor: "Bebell Digital Solutions";
+	--contact: "info@bebelldigitalsolutions.com";
+	--description: "A comprehensive guide to building a sustainable online business through strategic research and analysis. From idea validation to market launch.";
+	--keywords: "";
+	--last-modified: "2025-06-01";
+	--content-language: "en";
+	--generator: "HTML5, CSS3, JavaScript, Three.js, requestAnimationFrames,";
+   }
+
+
+
+        
     
         .custom-image-widget {
   position: fixed !important;
@@ -3761,5 +3805,34 @@ After completing setup, return to settings and enter your email address to activ
             }
         }, 24 * 60 * 60 * 1000); // Check once per day
     </script>
+
+
+
+
+      
+      <div id='pd_masking_overlay_product-38356' style='position:absolute;top:0;width:100%;height:100%;opacity:1;z-index:100;background:#fff;'>
+        <img src='//app.productdyno.com/assets/img/default.gif' style='border: none;display: block;margin: 100px auto 0px auto;'>
+      </div>
+      <script>
+            (function(d,t){
+                var hs=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                hs.src='https://app.productdyno.com/assets/js/protect.js';
+                hs.setAttribute('data-auth-type', 'product');
+                hs.setAttribute('data-auth-type-id', '38356');
+                s.parentNode.insertBefore(hs,s)
+            }(document,'script'));
+        </script>
+
+
+    
+
+
+
+
+
+
+
+
+    
 </body>
 </html>
