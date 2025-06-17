@@ -64,7 +64,7 @@
 }
   
     .custom-image {
-        width: 50px;
+        width: 70px;
         height: auto;
        transition: transform 0.2s;
     }
@@ -193,6 +193,56 @@
             overflow-y: auto;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif;
         }
+
+
+
+.footer-main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 96rem; 
+    margin: 0 auto;
+    background-color: transparent;
+    padding: 1rem;
+    box-sizing: border-box; 
+}
+
+.footer-text-centered {
+    font-size: 10px;
+    color: #666;
+    margin: 30px 0;
+    line-height: 1.4;
+    text-align: center;
+    width: 100%;
+}
+
+.dark .footer-text-centered {
+    color: #9ca3af;
+}
+
+@media (max-width: 1024px) {
+    .footer-main-content { 
+        margin-left: auto; 
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-text-centered { 
+        font-size: 11px; 
+        padding: 0 15px; 
+    }
+    .footer-main-content { 
+        margin-top: 2rem; 
+        padding-top: 1rem; 
+    }
+}
+
+
+
+        
     </style>
 </head>
 
@@ -211,13 +261,6 @@
     </a>
 
 </div>
-
-
-
-
-
-
-
 
 
 
@@ -259,7 +302,7 @@
                 
                 
                 <h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Financial Dashboard
+                    Financial Hub 🎯
                 </h1>
                 
                 <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
@@ -309,6 +352,9 @@
                 </a>
             </nav>
 
+
+            
+
             <!-- Quick Actions -->
             <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
                 <div class="mb-4">
@@ -324,6 +370,8 @@
                         </button>
                     </div>
                 </div>
+
+                
                 
                 <!-- Notion Template Button -->
                 <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
@@ -604,16 +652,7 @@ Track your financial health, manage budgets, and achieve your financial goals.
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            
-           <div>
-  <p style="font-size: 12px; text-align: center; margin: 10px 0; color: #666;">
-    <br>Developed with 💖 by Bebell Digital Solutions.<br>
-    Copyright © 2024 • All rights reserved
-  </p>
-</div>
-                 
+            </div>      
 
            </div>  
             
@@ -1152,7 +1191,13 @@ Track your financial health, manage budgets, and achieve your financial goals.
     
     
     
-    
+        <footer class="footer-main-content mt-auto pt-8 border-t border-gray-200 dark:border-gray-700">
+            <p class="footer-text-centered">
+                <br>Developed with 💖 by Bebell Digital Solutions.<br>
+                Copyright © 2024 • All rights reserved
+            </p>
+        </footer>
+    </div>     
     
 
     <!-- Modal Backdrop -->
@@ -1439,6 +1484,15 @@ Track your financial health, manage budgets, and achieve your financial goals.
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+    
     
     <!-- Add this right before the closing </body> tag, just before your existing script section -->
 <div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" x-data="{ bannerOpen: true, videoOpen: false }" x-show="bannerOpen">
